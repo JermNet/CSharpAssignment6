@@ -38,26 +38,13 @@ namespace Assignment6
 
         private void SetupHandlers()
         {
-            
-            hairCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, hairOffset, hair[0]), true));
-            hairCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, hairOffset, hair[1]), true));
-            hairCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, hairOffset, hair[2]), true));
-            hairCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, hairOffset, hair[3]), true));
 
-            eyesCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, eyesOffset, eyes[0]), true));
-            eyesCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, eyesOffset, eyes[1]), true));
-            eyesCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, eyesOffset, eyes[2]), true));
-            eyesCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, eyesOffset, eyes[3]), true));
-
-            noseCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, noseOffset, nose[0]), true));
-            noseCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, noseOffset, nose[1]), true));
-            noseCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, noseOffset, nose[2]), true));
-            noseCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, noseOffset, nose[3]), true));
-
-            mouthCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, mouthOffset, mouth[0]), true));
-            mouthCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, mouthOffset, mouth[1]), true));
-            mouthCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, mouthOffset, mouth[2]), true));
-            mouthCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, mouthOffset, mouth[3]), true));
+            for (int i = 0; i < 4; i++) {
+                hairCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, hairOffset, hair[i]), true));
+                eyesCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, eyesOffset, eyes[i]), true));
+                noseCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, noseOffset, nose[i]), true));
+                mouthCMDList.Add(new CommandHandler(() => imageManager.GetImage(firstCanvas, secondCanvas, horizontalOffset, mouthOffset, mouth[i]), true));
+            }
 
             helpCMDList.Add(new CommandHandler(() => Get_Doc_Help(), true));
             helpCMDList.Add(new CommandHandler(() => Get_Web_Help(), true));
